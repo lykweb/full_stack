@@ -54,10 +54,10 @@
   </div>
 
   <script>
-    /*jshint esversion:6*/
-    var can = document.createElement("canvas");
+    // 创建 canvas 对象
+    const can = document.createElement("canvas");
     document.body.appendChild(can);
-    var ctx = can.getContext('2d');
+    const ctx = can.getContext('2d');
 
     function resize() {
       can.width = window.innerWidth;
