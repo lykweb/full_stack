@@ -1,0 +1,34 @@
+<html>
+
+<head>
+  <title>Canvas tutorial</title>
+  <style type="text/css">
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body onload="draw();">
+  <canvas id="tutorial" width="150" height="150"></canvas>
+
+  <script type="text/javascript">
+    function draw() {
+      // 1、获取 canvas dom对象
+      const canvas = document.getElementById('tutorial');
+
+      if (canvas.getContext) {
+        // 2、获取 canvas 渲染上下文（CanvasRenderingContext2D）
+        const ctx = canvas.getContext('2d');
+        
+        // 3、使用 CanvasRenderingContext2D 绘图
+
+        ctx.fillRect(25, 25, 100, 100); // 绘制一个位于画布中心 宽/高:100px 填充（默认填充色：黑色）的矩形
+        ctx.clearRect(45, 45, 60, 60);  // 清除一个位于画布中心 宽/高:60px 的矩形区域（让该区域设置为完全透明）
+        ctx.strokeRect(50, 50, 50, 50); // 绘制一个位于画布中心 宽/高:50px 填充（默认填充色：黑色）的矩形
+      }
+    }
+  </script>
+</body>
+
+</html>

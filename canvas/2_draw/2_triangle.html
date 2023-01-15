@@ -1,0 +1,43 @@
+<html>
+
+<head>
+  <title>Canvas tutorial</title>
+  <style type="text/css">
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body onload="draw();">
+  <canvas id="tutorial" width="150" height="150"></canvas>
+
+  <script type="text/javascript">
+    function draw() {
+      // 1、获取 canvas dom对象
+      const canvas = document.getElementById('tutorial');
+
+      if (canvas.getContext) {
+        // 2、获取 canvas 渲染上下文（CanvasRenderingContext2D）
+        const ctx = canvas.getContext('2d');
+        
+        // 3、使用 CanvasRenderingContext2D 绘图
+
+        ctx.beginPath();
+        ctx.moveTo(75, 50);
+        ctx.lineTo(100, 75);
+        ctx.lineTo(100, 25);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(100, 50);
+        ctx.lineTo(125, 75);
+        ctx.lineTo(125, 25);
+        ctx.closePath();
+        ctx.stroke();
+      }
+    }
+  </script>
+</body>
+
+</html>
