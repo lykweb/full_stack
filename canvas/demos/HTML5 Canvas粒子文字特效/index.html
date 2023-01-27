@@ -47,7 +47,7 @@
 
 <body>
   <div class="control" style="position:absolute">
-    <input type="text" value="down.admin5.com" id="t">
+    <input type="text" value="canvas" id="t">
     <button onclick="changeText(t.value)">
       change
     </button>
@@ -57,8 +57,10 @@
     // 创建 canvas 对象
     const can = document.createElement("canvas");
     document.body.appendChild(can);
+    // 2、获取 canvas 渲染上下文
     const ctx = can.getContext('2d');
 
+    // 设置画布宽高为窗口宽高
     function resize() {
       can.width = window.innerWidth;
       can.height = window.innerHeight;
@@ -197,7 +199,7 @@
         particles[i].draw();
       }
     }
-    changeText("down.admin5.com");
+    changeText("canvas");
     setInterval(draw, 1);
   </script>
 

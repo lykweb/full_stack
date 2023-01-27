@@ -1,0 +1,69 @@
+<html>
+
+<head>
+  <title>球体碰撞</title>
+</head>
+
+<body>
+  <canvas id="canvas" width="800" height="300"></canvas>
+
+  <script type="module">
+    import { Vector2 } from '../../tools/vector.js'
+    import { MovingBall } from '../../tools/ball.js'
+    import { getUuid } from '../../tools/uuid.js'
+
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    const colorPalette = [
+      '#dd6b66', '#759aa0', '#e69d87', '#8dc1a9', '#ea7e53',
+      '#eedd78', '#73a373', '#73b9bc', '#7289ab', '#91ca8c', '#f49f42'
+    ];
+    const rightBorder = 800;
+    const bottomBorder = 300;
+    let balls = [];
+    let steps = 0; // 全局帧数记录
+
+    ctx.strokeStyle = "#353535";
+    ctx.lineWidth = 1;
+    ctx.strokeRect(0, 0, rightBorder, bottomBorder);
+
+    // 擦除画布内容 不包含边框
+    function clearContent() {
+      ctx.clearRect(1, 1, rightBorder - 2, bottomBorder - 2);
+    }
+
+    // 每隔一定时间增加一个新的球体；设定的速度的大小是相同的，只是初始速度方向随机
+    function addBall() {
+      const velocityValue = 2; // 每帧的初始速度大小
+      const velocityDirection = new Vector2(Math.random(), Math.random()).normalize() // 初始速度方向，这里用单位向量表示方向向量
+      const color = colorPalette[parseInt(steps / 100, 10) % 10]; // 随机球体颜色
+      const velocity = velocityDirection.multiply(velocityValue); // 初始速度
+      const ball = new MovingBall(new Vector2(50, 30), 20, color, velocity, getUuid());
+
+      balls.push(ball);
+    }
+
+    // 帧动画
+    (function render() {
+      steps++;
+      clearContent();
+
+      // 每隔100帧增加一个小球
+      if (steps % 100 === 0 && steps < 1500) {
+        addBall();
+      }
+
+      // 每帧都更新每个小球的状态
+      balls = balls.map((ball, index, originArr) => {
+        ball.update(index, originArr, rightBorder, bottomBorder);
+        ball.draw(ctx); // 绘制每个小球
+        return ball;
+      });
+
+      // 绘制每个小球位置
+      requestAnimationFrame(render);
+    })()
+  </script>
+</body>
+
+</html>
