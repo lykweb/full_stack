@@ -1,0 +1,73 @@
+.content {
+  font-size: 15px;
+  font-family: PingFang SC;
+  font-weight: 500;
+  .stage-level {
+    display: flex;
+    background-image: url(../../assets/img/png/5.png);
+    background-repeat: no-repeat;
+    background-size: 100% 32px;
+    .stage-item {
+      height: 32px;
+      line-height: 32px;
+      color:#ffffff;
+    }
+    .stage-start {
+      width: 22.39%;
+      .stage-start-text {
+        position: relative;
+        left: 29.89%;
+      }
+    }
+    .stage-progress {
+      width: 58.85%;
+      .stage-progress-text {
+        position: relative;
+        left: 43.48%;
+      }
+    }
+    .stage-end {
+      width: 18.76%;
+      .stage-end-text {
+        position: relative;
+        left: 33.31%;
+      }
+    }
+  }
+  .behavior {
+    margin-top: 12px;
+    display: flex;
+    .behavior-title {
+      height: 40px;
+      line-height: 40px;
+      border-radius: 6px;
+      text-align: center;
+      &.behavior-start-title {
+        color: #7062f2;
+        font-weight: 500;
+        background: rgba(112, 98, 242, 0.2);
+      }
+      &.behavior-progress-title {
+        color: #2f77ff;
+        background: rgba(47, 119, 255, 0.2);
+      }
+      &.behavior-end-title {
+        color: #5ac4e3;
+        background: rgba(90, 196, 227, 0.2);
+      }
+    }
+    .behavior-start {
+      width: 19.15%;
+    }
+    .behavior-progress {
+      width: 61.7%;
+      padding:0 12px;
+    }
+    .behavior-end {
+      width: 19.15%;
+    }
+    .behavior-content {
+      margin-top: 12px;
+    }
+  }
+}
