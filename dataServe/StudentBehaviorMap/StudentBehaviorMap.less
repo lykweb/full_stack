@@ -68,6 +68,86 @@
     }
     .behavior-content {
       margin-top: 12px;
+      &.behavior-end-content {
+        height: 288px;
+        background-image: url(../../assets/img/png/4.png);
+        background-repeat: no-repeat;
+        background-size: 100% 288px;
+        .behavior-end-text {
+          position: relative;
+          text-align: center;
+          &.text-job {
+            top: 90px;
+          }
+          &.text-school {
+            top: 113px;
+          }
+          &.text-abroad {
+            top: 135px;
+          }
+        }
+      }
+      &.behavior-progress-content {
+        position: relative;
+        .progress-bgs {
+          // padding: 0 8.57%;
+          .progress-orbit {
+            height: 300px;
+            background-image: url(../../assets/img/png/3.png);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+          }
+        }
+        .parent-node {
+          position: absolute;
+          background-image: url(../../assets/img/png/2.png);
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          filter: opacity(50%);
+        }
+        .parent-node-text {
+          position: absolute;
+          font-family: PingFang SC;
+          font-weight: 500;
+          font-size: 28px;
+          text-align: center;
+          color: #0f192f;
+          .parent-node-text-bottom {
+            font-size: 12px;
+          }
+        }
+        .student-status {
+          position: absolute;
+          .student-status-bg {
+            background-image: url(../../assets/img/png/10.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+          }
+        }
+        .info-title {
+          text-align: center;
+          height: 22px;
+          line-height: 22px;
+          color: #252f47;
+        }
+        .info-item {
+          color: #252f47;
+          font-size: 12px;
+          line-height: 18px;
+          margin-top: 2px;
+          .blue-dot {
+            position: relative;
+            top: -2px;
+            margin-right: 2px;
+            display: inline-block;
+            padding: 2px;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background:#3d5afa;
+          }
+        }
+      }
     }
   }
 }
