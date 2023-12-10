@@ -6,4 +6,4 @@ function fn(v: boolean) {
 
 type a = MyReturnType<typeof fn> // 1 | 2
 
-type MyReturnType<T extends (...args: any) => any> = T extends (...args: any) => infer R ? R : never;
+type MyReturnType<T extends (...arg: any) => any> = T extends (...arg: any) => infer R ? R : never;
