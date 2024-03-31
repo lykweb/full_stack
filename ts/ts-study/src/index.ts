@@ -27,6 +27,15 @@ let Kp1: Kp1;
 Kp1 = "name";
 
 
-function prop(obj: object, key: string) {
-  return obj[key];
+// function prop(obj: object, key: string) {
+//   return obj[key];
+// }
+
+interface User {
+  /** 这个是idkkk */
+  id: string;
+  name: string;
 }
+
+// let user: User = {
+// }
